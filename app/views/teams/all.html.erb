@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <% @teams.each do |team| %>
+        <div class="media">
+          <%= link_to team_show_path(team.id) do %>
+            <%= image_tag "logos/rayados.jpg" ,class: "media-object media-left team-media-image" %>
+          <% end %>
+          <div class="media-body">
+            <h4 class="media-heading"><%= team.name %></h4>
+            <p>
+              <%= link_to team.twitter, "https://twitter.com/#{team.twitter}", target: "_blank" %>
+              </br>
+              <%= link_to team.hashtags, "https://twitter.com/#{team.hashtags}", target: "_blank" %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
