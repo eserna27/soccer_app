@@ -7,21 +7,41 @@ describe "Match create" do
   it "should recive" do
     home_team = TeamsFake.new_team_with_name("Local")
     away_team = TeamsFake.new_team_with_name("Visitante")
-    params = { home_team: home_team, away_team: away_team }
+    date_time = Time.local(2016, 07, 27, 12, 00, 00, "+06:00")
+    params = { home_team: home_team, away_team: away_team, date: date_time }
     match = Matches.create_match(params)
     expect(match.home_team.name).to eq "Local"
     expect(match.away_team.name).to eq "Visitante"
+    expect(match.date.to_s).to eq "2016-07-27 12:00:00 -0500"
   end
 end
 
 describe "Match validation" do
-  it "should validate the inputs" do
-    home_team = TeamsFake.new_team_with_name("Local")
+  it "should has both teams" do
     away_team = TeamsFake.new_team_with_name("Visitante")
-    params = { home_team: "", away_team: away_team }
+    date_time = Time.local(2016, 07, 27, 12, 00, 00, "+06:00")
+    params = { home_team: "", away_team: away_team, date: date_time }
     match = Matches.create_match(params)
     match.validate
     expect(match.errors).to eq ["miss_team"]
+  end
+
+  it "should not be the same team" do
+    home_team = TeamsFake.new_team_with_name("Local")
+    date_time = Time.local(2016, 07, 27, 12, 00, 00, "+06:00")
+    params = { home_team: home_team, away_team: home_team, date: date_time }
+    match = Matches.create_match(params)
+    match.validate
+    expect(match.errors).to eq ["same_team"]
+  end
+
+  it "should has date" do
+    home_team = TeamsFake.new_team_with_name("Local")
+    away_team = TeamsFake.new_team_with_name("Visitante")
+    params = { home_team: home_team, away_team: away_team }
+    match = Matches.create_match(params)
+    match.validate
+    expect(match.errors).to eq ["need_date"]
   end
 end
 
