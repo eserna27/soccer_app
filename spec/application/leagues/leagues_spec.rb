@@ -5,7 +5,7 @@ describe "League create" do
   it "should have params" do
     params = {
       name: "Liga BBVA Bancomer",
-      location: "México",
+      location: "México"
     }
     league = Leagues.create(params)
     expect(league.name).to eq "Liga BBVA Bancomer"

@@ -9,9 +9,7 @@ describe "Weeks create" do
   it "should have params" do
     parmas = {
       name: "Apertura 2016",
-      year: "2016",
-      teams: [Teams.create({ name: "Rayados", twitter: "@Rayados", hashtags: "#Rayados" }),
-              Teams.create({ name: "Tigres", twitter: "@Tigres", hashtags: "#Tigres" })]
+      year: "2016"
     }
     season = Seasons.create(parmas)
     week = Weeks.create_week({
