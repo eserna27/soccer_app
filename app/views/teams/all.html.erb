@@ -3,9 +3,11 @@
     <div class="col-sm-12">
       <% @teams.each do |team| %>
         <div class="media">
-          <%= link_to team_show_path(team.id) do %>
-            <%= image_tag "logos/rayados.jpg" ,class: "media-object media-left team-media-image" %>
-          <% end %>
+          <div class="media-left">
+            <%= link_to team_show_path(team.id) do %>
+              <%= image_tag "logos/#{team.logo}" ,class: "media-object team-media-image" %>
+            <% end %>
+          </div>
           <div class="media-body">
             <h4 class="media-heading"><%= team.name %></h4>
             <p>

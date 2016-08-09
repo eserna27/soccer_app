@@ -5,3 +5,58 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+unless Team.find_by(name: "Rayados")
+  Teams.save(Teams.create(name: "Rayados", hashtags: "#RayadosDeCorazón", twitter: "@Rayados", logo: "rayados.jpg"), Teams::TeamStore)
+end
+unless Team.find_by(name: "Tigres")
+  Teams.save(Teams.create(name: "Tigres", twitter: "@TigresOficial", hastags: "#Tigres", logo: "tigres.png"), Teams::TeamStore)
+end
+unless Team.find_by(name: "Xolos")
+  Teams.save(Teams.create(name: "Xolos", twitter: "@Xolos", hashtags: "#Xolos", logo: "xolos.jpeg"), Teams::TeamStore)
+end
+unless Team.find_by(name: "Monarcas")
+  Teams.save(Teams.create(name: "Monarcas", twitter: "@FuerzaMonarca", hashtags: "#Monarcas", logo: "monarcas.png"), Teams::TeamStore)
+end
+unless Team.find_by(name: "Gallos de Queretaro")
+  Teams.save(Teams.create(name: "Gallos de Queretaro", twitter: "@gbqueretaro", hashtags: "#GallosBlancos", logo: "queretaro.png"), Teams::TeamStore)
+end
+unless Team.find_by(name: "Tiburones Rojos")
+  Teams.save(Teams.create(name: "Tiburones Rojos", twitter: "@ClubTiburones", hashtags: "#SiempreTiburón", logo: "tiburones.png"), Teams::TeamStore)
+end
+unless Team.find_by(name: "Puebla")
+  Teams.save(Teams.create(name: "Puebla", twitter: "@PueblaFC", hashtags: "#PonteLaDelPuebla", logo: "puebla.png"), Teams::TeamStore)
+end
+unless Team.find_by(name: "Atlas")
+  Teams.save(Teams.create(name: "Atlas", twitter: "@atlasfc", hashtags: "#SoyFiel", logo: "atlas.png"), Teams::TeamStore)
+end
+unless Team.find_by(name: "Toluca")
+  Teams.save(Teams.create(name: "Toluca", twitter: "@TolucaFC", hashtags: "#SomosDiablos", logo: "toluca.jpg"), Teams::TeamStore)
+end
+unless Team.find_by(name: "Pachuca")
+  Teams.save(Teams.create(name: "Pachuca", twitter: "@Tuzos", hastags: "#Tuzos", logo: "pachuca.png"), Teams::TeamStore)
+end
+unless Team.find_by(name: "León")
+  Teams.save(Teams.create(name: "León", twitter: "@clubleonfc", hastags: "#LaFiera", logo: "leon.png"), Teams::TeamStore)
+end
+unless Team.find_by(name: "Necaxa")
+  Teams.save(Teams.create(name: "Necaxa", twitter: "@ClubNecaxa", hastags: "#FuerzaRayos", logo: "necaxa.png"), Teams::TeamStore)
+end
+unless Team.find_by(name: "Cruz Azul")
+  Teams.save(Teams.create(name: "Cruz Azul", twitter: "@Cruz_Azul_FC", hastags: "#AzulEsTodo", logo: "cruzazul.png"), Teams::TeamStore)
+end
+unless Team.find_by(name: "América")
+  Teams.save(Teams.create(name: "América", twitter: "@ClubAmerica", hastags: "#SomosAmerica", logo: "america.jpeg"), Teams::TeamStore)
+end
+unless Team.find_by(name: "Jaguares")
+  Teams.save(Teams.create(name: "Jaguares", twitter: "@Chiapas_FC", hastags: "#TestigoDelJaguar", logo: "jaguares.png"), Teams::TeamStore)
+end
+unless Team.find_by(name: "Pumas")
+  Teams.save(Teams.create(name: "Pumas", twitter: "@PumasMx", hastags: "#SoyDePumas", logo: "pumas.png"), Teams::TeamStore)
+end
+unless Team.find_by(name: "Guadalajara")
+  Teams.save(Teams.create(name: "Guadalajara", twitter: "@Chivas", hastags: "#UnidosSomosCA3RONES", logo: "chivas.jpeg"), Teams::TeamStore)
+end
+unless Team.find_by(name: "Santos")
+  Teams.save(Teams.create(name: "Santos", twitter: "@ClubSantos", hastags: "#Guerreros", logo: "santos.png"), Teams::TeamStore)
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160706184143) do
+ActiveRecord::Schema.define(version: 20160809173248) do
 
   create_table "leagues", force: :cascade do |t|
     t.string   "name"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20160706184143) do
     t.string   "hashtags"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "logo"
   end
 
   create_table "weeks", force: :cascade do |t|

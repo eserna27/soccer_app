@@ -4,11 +4,13 @@ require_relative 'team_store_fake'
 
 describe "Teams can be create" do
   it "should recive params" do
-    params = { name: "Rayados", twitter: "@Rayados", hashtags: "#Rayados" }
+    params = { name: "Rayados", twitter: "@Rayados", hashtags: "#Rayados",
+      logo: "rayados.jpg" }
     team = Teams.create(params)
     expect(team.name).to eq "Rayados"
     expect(team.twitter).to eq "@Rayados"
     expect(team.hashtags).to eq "#Rayados"
+    expect(team.logo).to eq "rayados.jpg"
   end
 
   it "should has name twitter and hashtags" do
@@ -19,7 +21,8 @@ describe "Teams can be create" do
   end
 
   it "should recive true if save" do
-    params = { name: "Rayados", twitter: "@Rayados", hashtags: "#Rayados" }
+    params = { name: "Rayados", twitter: "@Rayados", hashtags: "#Rayados",
+      logo: "rayados.jpg" }
     team = Teams.create(params)
     team_save = Teams.save(team, TeamStoreFake)
     expect(team_save).to eq true
@@ -32,6 +35,7 @@ describe "Teams can be show" do
     expect(team.name).to eq "Rayados"
     expect(team.twitter).to eq "@Rayados"
     expect(team.hashtags).to eq "#Rayados"
+    expect(team.logo).to eq "rayados.jpg"
   end
 end
 

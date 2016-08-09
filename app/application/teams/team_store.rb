@@ -7,5 +7,9 @@ module Teams
     def self.find_team_with_id(team_id)
       ::Team.find(team_id)
     end
+
+    def self.save_team(team)
+      ::Team.create(team.params)
+    end
   end
 end
