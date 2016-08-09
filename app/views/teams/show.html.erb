@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  </br>
+  <div class="page-header">
+    <h1>
+      <%= image_tag "logos/#{@team.logo}" ,class: "team-media-image" %>
+      <%= @team.name %>
+      <small>
+        <%= link_to "https://twitter.com/#{@team.twitter}", target: "_blank" do %>
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        <% end %>
+      </small>
+    </h1>
+  </div>
+  <a class="twitter-timeline" data-width="300" data-height="500" data-theme="light" data-link-color="#2B7BB9"
+    href="https://twitter.com/<%= @team.twitter %>"></a>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>

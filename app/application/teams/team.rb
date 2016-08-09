@@ -1,6 +1,6 @@
 module Teams
   class Team
-    attr_reader :name, :twitter, :hashtags, :id
+    attr_reader :name, :twitter, :hashtags, :id, :logo
     attr_accessor :errors
 
     def initialize(params)
@@ -8,6 +8,7 @@ module Teams
       @twitter = params[:twitter]
       @id = params[:id]
       @hashtags = params[:hashtags]
+      @logo = params[:logo]
       @errors = []
     end
 
@@ -15,7 +16,8 @@ module Teams
       new({
         name: params[:name],
         twitter: params[:twitter],
-        hashtags: params[:hashtags]
+        hashtags: params[:hashtags],
+        logo: params[:logo]
         })
     end
 
@@ -24,13 +26,23 @@ module Teams
         name: team_from_store.name,
         twitter: team_from_store.twitter,
         hashtags: team_from_store.hashtags,
-        id: team_from_store.id
+        id: team_from_store.id,
+        logo: team_from_store.logo
         })
     end
 
     def validates_params
       add_error("name_necessary") if name == "" || name == nil
       add_error("twitter_necessary") if twitter == "" || twitter == nil
+    end
+
+    def params
+      {
+        name: name,
+        twitter: twitter,
+        hashtags: hashtags,
+        logo: logo
+      }
     end
 
     private
