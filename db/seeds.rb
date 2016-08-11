@@ -10,10 +10,10 @@ unless Team.find_by(name: "Rayados")
   Teams.save(Teams.create(name: "Rayados", hashtags: "#RayadosDeCorazón", twitter: "@Rayados", logo: "rayados.jpg"), Teams::TeamStore)
 end
 unless Team.find_by(name: "Tigres")
-  Teams.save(Teams.create(name: "Tigres", twitter: "@TigresOficial", hastags: "#Tigres", logo: "tigres.png"), Teams::TeamStore)
+  Teams.save(Teams.create(name: "Tigres", twitter: "@TigresOficial", hashtags: "#Tigres", logo: "tigres.png"), Teams::TeamStore)
 end
 unless Team.find_by(name: "Xolos")
-  Teams.save(Teams.create(name: "Xolos", twitter: "@Xolos", hashtags: "#Xolos", logo: "xolos.jpeg"), Teams::TeamStore)
+  Teams.save(Teams.create(name: "Xolos", twitter: "@Xolos", hashtags: "#Xolos", logo: "xolos.png"), Teams::TeamStore)
 end
 unless Team.find_by(name: "Monarcas")
   Teams.save(Teams.create(name: "Monarcas", twitter: "@FuerzaMonarca", hashtags: "#Monarcas", logo: "monarcas.png"), Teams::TeamStore)
@@ -46,7 +46,7 @@ unless Team.find_by(name: "Cruz Azul")
   Teams.save(Teams.create(name: "Cruz Azul", twitter: "@Cruz_Azul_FC", hashtags: "#AzulEsTodo", logo: "cruzazul.png"), Teams::TeamStore)
 end
 unless Team.find_by(name: "América")
-  Teams.save(Teams.create(name: "América", twitter: "@ClubAmerica", hashtags: "#SomosAmerica", logo: "america.jpeg"), Teams::TeamStore)
+  Teams.save(Teams.create(name: "América", twitter: "@ClubAmerica", hashtags: "#SomosAmerica", logo: "america.png"), Teams::TeamStore)
 end
 unless Team.find_by(name: "Jaguares")
   Teams.save(Teams.create(name: "Jaguares", twitter: "@Chiapas_FC", hashtags: "#TestigoDelJaguar", logo: "jaguares.png"), Teams::TeamStore)
@@ -55,7 +55,7 @@ unless Team.find_by(name: "Pumas")
   Teams.save(Teams.create(name: "Pumas", twitter: "@PumasMx", hashtags: "#SoyDePumas", logo: "pumas.png"), Teams::TeamStore)
 end
 unless Team.find_by(name: "Guadalajara")
-  Teams.save(Teams.create(name: "Guadalajara", twitter: "@Chivas", hashtags: "#UnidosSomosCA3RONES", logo: "chivas.jpeg"), Teams::TeamStore)
+  Teams.save(Teams.create(name: "Guadalajara", twitter: "@Chivas", hashtags: "#UnidosSomosCA3RONES", logo: "chivas.png"), Teams::TeamStore)
 end
 unless Team.find_by(name: "Santos")
   Teams.save(Teams.create(name: "Santos", twitter: "@ClubSantos", hashtags: "#Guerreros", logo: "santos.png"), Teams::TeamStore)
