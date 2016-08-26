@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160809173248) do
+ActiveRecord::Schema.define(version: 20160813195209) do
 
   create_table "leagues", force: :cascade do |t|
     t.string   "name"
@@ -20,11 +20,15 @@ ActiveRecord::Schema.define(version: 20160809173248) do
   end
 
   create_table "matches", force: :cascade do |t|
-    t.integer  "home_team"
-    t.integer  "away_team"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "home_team_id"
+    t.integer  "away_team_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.datetime "date"
+    t.integer  "week_id"
+    t.index ["away_team_id"], name: "index_matches_on_away_team_id"
+    t.index ["home_team_id"], name: "index_matches_on_home_team_id"
+    t.index ["week_id"], name: "index_matches_on_week_id"
   end
 
   create_table "season_registrations", force: :cascade do |t|
@@ -57,10 +61,8 @@ ActiveRecord::Schema.define(version: 20160809173248) do
   create_table "weeks", force: :cascade do |t|
     t.integer  "week_number"
     t.integer  "season_id"
-    t.integer  "match_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["match_id"], name: "index_weeks_on_match_id"
     t.index ["season_id"], name: "index_weeks_on_season_id"
   end
 

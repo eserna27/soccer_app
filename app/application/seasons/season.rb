@@ -12,8 +12,12 @@ module Seasons
       {
         name: name,
         year: year.to_int,
-        league: league
+        league: league,
       }
+    end
+
+    def self.current_season(season_store)
+      season_store.current_season
     end
   end
 end

@@ -60,16 +60,3 @@ end
 unless Team.find_by(name: "Santos")
   Teams.save(Teams.create(name: "Santos", twitter: "@ClubSantos", hashtags: "#Guerreros", logo: "santos.png"), Teams::TeamStore)
 end
-
-if League.find_by(name: "Liga Bancomer")
-  Leagues.save(Leagues.create({name: "Liga Bancomer", location: "MX"}), Leagues::LeagueStore)
-end
-
-if League.find_by(name: "Liga Bancomer").seasons
-  l = League.find_by(name: "Liga Bancomer")
-  Seasons.save_season(Seasons.create(name: "Apertura 2016", year: 2016, league: l), Seasons::SeasonStore)
-  season = Season.find_by(name: "Apertura 2016")
-  Team.all.map { |team|
-    SeasonRegistration.create(team: team, season: season)
-  }
-end

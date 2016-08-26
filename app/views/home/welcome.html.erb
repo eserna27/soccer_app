@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  </br>
+  <div class="page-header">
+    <h4>
+      Jornada 7
+      <small>
+        Liga Méxicana
+      </small>
+    </h4>
+  </div>
+  <div class="row">
+    <div class="col-sm-11 col-sm-offset-1">
+      <% @week.matches.each do |match| %>
+        <div class="media">
+          <div class="media-left">
+          </div>
+          <div class="media-body">
+            <%= link_to match_path(match.id) do %>
+              <div class="row">
+                <div class="col-md-2">
+                  <%= image_tag "logos/#{match.home_team.logo}" ,class: "team-media-image" %>
+                </div>
+                <div class="col-md-1">
+                  <h2><strong>VS</strong></h2>
+                </div>
+                <div class="col-md-2">
+                  <%= image_tag "logos/#{match.away_team.logo}" ,class: "team-media-image" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
 class Week < ApplicationRecord
   belongs_to :season
-  belongs_to :match
+  has_many :matches
 end
