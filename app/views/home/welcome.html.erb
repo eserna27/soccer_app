@@ -12,17 +12,17 @@
     <div class="col-sm-12">
       <% @week.matches.each do |match| %>
         <%= link_to match_path(match.id) do %>
-          <div class="row">
+          <div class="row matches-list-row">
             <div class="wrapper col-md-3">
               <%= image_tag "logos/#{match.home_team.logo}"  %>
             </div>
-            <div class="col-md-1">
+            <div class="col-md-1 matches-list-text">
               <h3 style="text-align: center;">VS</h3>
             </div>
             <div class="wrapper col-md-3">
               <%= image_tag "logos/#{match.away_team.logo}"  %>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 matches-list-text">
               <h5>Dia: <strong><%= l(match.date, format: "%d-%B-%Y") %></strong></h5>
               <h5>Hora: <strong><%= match.date.strftime("%H:%M") %></strong></h5>
             </div>

@@ -15,13 +15,23 @@ div.wrapper {
   overflow:hidden;
   text-align:center;
   width: 100px;
-  background-color: #0275d8;
 }
 div.wrapper img {
-  margin:-100%;
+  width: 100%; /* or any custom size */
+  height: 100%;
+  object-fit: contain;
 }
 
 .matches-list {
   margin-top: 20px;
   margin-left: 10px;
+}
+
+.matches-list-row {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.matches-list-text {
+  padding-top: 30px;
 }
