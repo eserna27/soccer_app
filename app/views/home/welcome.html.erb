@@ -2,7 +2,7 @@
   </br>
   <div class="page-header">
     <h4>
-      Jornada 7
+      Jornada <%= @week.week_number %>
       <small>
         Liga Méxicana
       </small>
@@ -10,27 +10,28 @@
   </div>
   <div class="row">
     <div class="col-sm-11 col-sm-offset-1">
-      <% @week.matches.each do |match| %>
-        <div class="media">
-          <div class="media-left">
-          </div>
-          <div class="media-body">
+      <table class="table table-hover">
+        <tbody>
+          <% @week.matches.each do |match| %>
             <%= link_to match_path(match.id) do %>
-              <div class="row">
-                <div class="col-md-2">
+              <tr>
+                <td style="width: 10%;">
                   <%= image_tag "logos/#{match.home_team.logo}" ,class: "team-media-image" %>
-                </div>
-                <div class="col-md-1">
-                  <h2><strong>VS</strong></h2>
-                </div>
-                <div class="col-md-2">
+                </td>
+                <td style="width: 10%;">
+                  <h3>vs</h3>
+                </td>
+                <td style="width: 10%;">
                   <%= image_tag "logos/#{match.away_team.logo}" ,class: "team-media-image" %>
-                </div>
-              </div>
+                </td>
+                <td>
+                  <%= match.date %>
+                </td>
+              </tr>
             <% end %>
-          </div>
-        </div>
-      <% end %>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
