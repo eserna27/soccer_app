@@ -8,30 +8,27 @@
       </small>
     </h4>
   </div>
-  <div class="row">
-    <div class="col-sm-11 col-sm-offset-1">
-      <table class="table table-hover">
-        <tbody>
-          <% @week.matches.each do |match| %>
-            <%= link_to match_path(match.id) do %>
-              <tr>
-                <td style="width: 10%;">
-                  <%= image_tag "logos/#{match.home_team.logo}" ,class: "team-media-image" %>
-                </td>
-                <td style="width: 10%;">
-                  <h3>vs</h3>
-                </td>
-                <td style="width: 10%;">
-                  <%= image_tag "logos/#{match.away_team.logo}" ,class: "team-media-image" %>
-                </td>
-                <td>
-                  <%= match.date %>
-                </td>
-              </tr>
-            <% end %>
-          <% end %>
-        </tbody>
-      </table>
+  <div class="row matches-list">
+    <div class="col-sm-12">
+      <% @week.matches.each do |match| %>
+        <%= link_to match_path(match.id) do %>
+          <div class="row">
+            <div class="wrapper col-md-3">
+              <%= image_tag "logos/#{match.home_team.logo}"  %>
+            </div>
+            <div class="col-md-1">
+              <h3 style="text-align: center;">VS</h3>
+            </div>
+            <div class="wrapper col-md-3">
+              <%= image_tag "logos/#{match.away_team.logo}"  %>
+            </div>
+            <div class="col-md-5">
+              <h5>Dia: <strong><%= l(match.date, format: "%d-%B-%Y") %></strong></h5>
+              <h5>Hora: <strong><%= match.date.strftime("%H:%M") %></strong></h5>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -7,3 +7,21 @@
 @import "teams/team_all";
 
 @import "admin/admin_session";
+
+
+div.wrapper {
+  height: 100px;
+  line-height: 100px;
+  overflow:hidden;
+  text-align:center;
+  width: 100px;
+  background-color: #0275d8;
+}
+div.wrapper img {
+  margin:-100%;
+}
+
+.matches-list {
+  margin-top: 20px;
+  margin-left: 10px;
+}

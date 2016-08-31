@@ -9,37 +9,36 @@
     </h4>
   </div>
   <div class="row">
-    <div class="col-sm-11 col-sm-offset-1">
-      <div class="media">
-        <div class="media-left">
+    <div class="col-sm-12">
+      <div class="row" style="margin-left: 10px; margin-bottom: 20px;">
+        <div class="wrapper col-md-6">
+          <%= image_tag "logos/#{@match.home_team.logo}"  %>
         </div>
-        <div class="media-body">
-          <%= link_to match_path(@match.id) do %>
-            <div class="row">
-              <div class="col-md-2">
-                <%= image_tag "logos/#{@match.home_team.logo}" ,class: "team-media-image" %>
-              </div>
-              <div class="col-md-1">
-                <h2><strong>VS</strong></h2>
-              </div>
-              <div class="col-md-2">
-                <%= image_tag "logos/#{@match.away_team.logo}" ,class: "team-media-image" %>
-              </div>
-            </div>
-          <% end %>
+        <div class="col-md-1">
+          <h3 style="text-align: center;">VS</h3>
+        </div>
+        <div class="wrapper col-md-6">
+          <%= image_tag "logos/#{@match.away_team.logo}"  %>
+        </div>
+        <div class="col-md-5">
+          <h5>Dia: <strong><%= l(@match.date, format: "%d-%B-%Y") %></strong></h5>
+          <h5>Hora: <strong><%= @match.date.strftime("%H:%M") %></strong></h5>
         </div>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-11 col-sm-offset-1">
+    <div class="col-sm-12">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-3">
           <a class="twitter-timeline" data-width="300" data-height="500" data-theme="light" data-link-color="#2B7BB9"
             href="https://twitter.com/<%= @match.home_team.twitter %>"></a>
             <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
-        <div class="col-sm-6">
+        <div>
+
+        </div>
+        <div class="col-sm-3">
           <a class="twitter-timeline" data-width="300" data-height="500" data-theme="light" data-link-color="#2B7BB9"
             href="https://twitter.com/<%= @match.away_team.twitter %>"></a>
             <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
