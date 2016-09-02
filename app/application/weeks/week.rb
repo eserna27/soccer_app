@@ -15,8 +15,8 @@ module Weeks
       @matches = params[:matches]
     end
 
-    def self.new_for_form(season_store)
-      season = current_season(season_store)
+    def self.new_for_form(season_store, team_store)
+      season = current_season(season_store, team_store)
       new({
         season_id: season.id,
         season_name: season.name,
@@ -51,8 +51,8 @@ module Weeks
 
     private
 
-    def self.current_season(season_store)
-      Seasons::Season.current_season(season_store)
+    def self.current_season(season_store, team_store)
+      Seasons::Season.current_season(season_store, team_store)
     end
 
     def self.find_week(week_id, week_store)

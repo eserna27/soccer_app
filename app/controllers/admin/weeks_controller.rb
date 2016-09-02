@@ -1,7 +1,7 @@
 class Admin::WeeksController < Admin::BaseController
   def new
     @week = Weeks.new_for_form(Seasons::SeasonStore)
-    @weeks = Seasons.current_season_weeks(Seasons::SeasonStore)
+    @weeks = Seasons.current_season_weeks(Seasons::SeasonStore, Teams::TeamStore)
   end
 
   def create

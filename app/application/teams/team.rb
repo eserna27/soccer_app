@@ -1,6 +1,6 @@
 module Teams
   class Team
-    attr_reader :name, :twitter, :hashtags, :id, :logo
+    attr_reader :name, :twitter, :hashtags, :id, :logo, :ranking, :id_club
     attr_accessor :errors
 
     def initialize(params)
@@ -10,6 +10,8 @@ module Teams
       @hashtags = params[:hashtags]
       @logo = params[:logo]
       @errors = []
+      @id_club = params[:id_club]
+      @ranking = params[:ranking]
     end
 
     def self.new_team(params)
@@ -18,6 +20,18 @@ module Teams
         twitter: params[:twitter],
         hashtags: params[:hashtags],
         logo: params[:logo]
+        })
+    end
+
+    def self.new_team_json(ranking, team)
+      new({
+        name: team.name,
+        twitter: team.twitter,
+        hashtags: team.hashtags,
+        id: team.id,
+        logo: team.logo,
+        id_club: team.id_club,
+        ranking: ranking.to_i
         })
     end
 

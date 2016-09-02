@@ -6,7 +6,6 @@ module Matches
     include ActiveModel::Model
 
     attr_reader :home_team, :away_team ,:date, :week, :home_team_id, :away_team_id, :week_id, :id
-    #attr_accessor :errors
 
     def initialize(params)
       @home_team = params[:home_team]
@@ -17,7 +16,6 @@ module Matches
       @week = params[:week]
       @week_id = params[:week_id]
       @id = params[:id]
-    #  @errors = []
     end
 
     def self.new_match(params)
@@ -81,7 +79,7 @@ module Matches
     private
 
     def add_error(error)
-      errors << error
+      errors.add(:error, error)
     end
 
     def self.find_team(team_id, store_team)

@@ -9,8 +9,8 @@ module Weeks
     store_week.save_week(week)
   end
 
-  def self.new_for_form(season_store)
-    Weeks::Week.new_for_form(season_store)
+  def self.new_for_form(season_store, team_store)
+    Weeks::Week.new_for_form(season_store, team_store)
   end
 
   def self.show_week_page(week_id, season_store, store_team)

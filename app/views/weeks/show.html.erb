@@ -8,13 +8,6 @@
       </small>
     </h4>
   </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <% @season_calendar.weeks.each do |week| %>
-        <%= link_to week.week_number, week_path(week.id) %>
-      <% end %>
-    </div>
-  </div>
   <div class="row matches-list">
     <div class="col-sm-6">
       <% @week.matches.each do |match| %>
@@ -38,21 +31,20 @@
       <% end %>
     </div>
     <div class="col-sm-6">
-      <div class="page-header">
-        <h4>
-          Tabla General
-          <small>
-            Liga Méxicana
-          </small>
-        </h4>
-      </div>
-      <ol>
-        <% @general_table.each do |team| %>
-          <li>
-            <%= team.name %>
-          </li>
-        <% end %>
-      </ol>
+      <script type="text/javascript">
+        <!--
+        padding = "5";
+        width = "300px";
+        bgColor = "#45473D";
+        linkColor = "#FEFFFD";
+        textColorA = "#EBEBE6";
+        textColorB = "#9E9FA1";
+        border = "5px solid #87888A";
+        textFont = "12px Arial, Helvetica, Sans serif";
+        //-->
+        </script>
+        <script language="javascript" src="http://www.resultados-futbol.com/scripts/api/api.php?key=41d55642f6613d82dae41eac2ecc4d65&format=widget&req=w_results&category=68&round=<%= @week.week_number.to_i %>"></script>
+        <a target="_blank" style="margin-left:110px;font-size:10px;color:#FEFFFD;" href="http://www.resultados-futbol.com/">Resultados de F&uacute;tbol</a>
     </div>
   </div>
 </div>
