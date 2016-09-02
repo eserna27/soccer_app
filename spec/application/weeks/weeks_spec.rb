@@ -40,7 +40,7 @@ end
 
 describe "new for Form" do
   it "should have all attributes nil" do
-    new_for_form = Weeks.new_for_form(SeasonStoreFake)
+    new_for_form = Weeks.new_for_form(SeasonStoreFake, TeamStoreFake)
     expect(new_for_form.season_name).to eq "Apertura Falsa"
     expect(new_for_form.season_id).to eq "1"
     expect(new_for_form.week_number()).to eq ""

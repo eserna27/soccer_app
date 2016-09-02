@@ -11,5 +11,9 @@ module Teams
     def self.save_team(team)
       ::Team.create(team.params)
     end
+
+    def self.find_team_by_id_club(id_club)
+      ::Team.find_by(id_club: id_club)
+    end
   end
 end

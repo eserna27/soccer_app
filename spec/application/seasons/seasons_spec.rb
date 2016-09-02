@@ -3,6 +3,7 @@ require_relative '../../../app/application/teams'
 require_relative '../../../app/application/seasons'
 require_relative '../../../app/application/leagues'
 require_relative 'season_store_fake'
+require_relative '../teams/team_store_fake'
 
 describe "Season create" do
   it "should have some parmas" do
@@ -25,5 +26,12 @@ describe "Season create" do
     }
     season = Seasons.create(parmas)
     expect(Seasons.save_season(season, SeasonStoreFake)).to eq true
+  end
+end
+
+describe "Season Calendar" do
+  it "should have all the weeks in season" do
+    season = Seasons.current_season_weeks(SeasonStoreFake, TeamStoreFake)
+    expect(season.weeks.any?).to eq true
   end
 end

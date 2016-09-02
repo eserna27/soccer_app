@@ -45,7 +45,7 @@ describe "Match validation" do
     params = { home_team: "", away_team: away_team, date: date_time, week: week }
     match = Matches.create_match(params)
     match.validate
-    expect(match.errors).to eq ["miss_team"]
+    expect(match.errors[:error]).to eq ["miss_team"]
   end
 
   it "should not be the same team" do
@@ -54,7 +54,7 @@ describe "Match validation" do
     params = { home_team: home_team, away_team: home_team, date: date_time }
     match = Matches.create_match(params)
     match.validate
-    expect(match.errors).to eq ["same_team"]
+    expect(match.errors[:error]).to eq ["same_team"]
   end
 
   it "should has date" do
@@ -63,7 +63,7 @@ describe "Match validation" do
     params = { home_team: home_team, away_team: away_team }
     match = Matches.create_match(params)
     match.validate
-    expect(match.errors).to eq ["need_date"]
+    expect(match.errors[:error]).to eq ["need_date"]
   end
 end
 

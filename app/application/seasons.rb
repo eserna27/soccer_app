@@ -9,7 +9,7 @@ module Seasons
     season_store.save_season(season)
   end
 
-  def self.current_season_weeks(season_store)
-    season_store.current_season.weeks
+  def self.current_season_weeks(season_store, team_store)
+    Seasons::Season.current_season(season_store, team_store)
   end
 end

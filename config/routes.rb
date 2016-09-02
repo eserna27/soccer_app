@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get "/teams", to: "teams#all", as: "team_all"
   get "/team/:id", to: "teams#show", as: "team_show"
 
-  resources :matches
+  resources :matches, only: [:show]
+  resources :weeks, only: [:show]
   
   namespace :admin do
     resources :weeks
